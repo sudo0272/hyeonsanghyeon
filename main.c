@@ -116,8 +116,8 @@ typedef struct {
 } Hangul;
 
 typedef struct {
-  wchar_t ptrn[9 + 1];
-  unsigned lens[9 + 1];
+  wchar_t ptrn[10 + 1];
+  unsigned lens[10 + 1];
   unsigned idx;
 } Ptrn;
 
@@ -262,7 +262,7 @@ int main(int argc, char **argv) {
         cmd = JEONUN_SALRYEOJUSEYO;
       } else if (match_ptrn(&ptrn, L"크롬 운영체제")) {
         cmd = CHROME_OS;
-      } else if (match_ptrn(&ptrn, L"윈도우 웹브라우저")) {
+      } else if (match_ptrn(&ptrn, L"윈도우즈 웹브라우저")) {
         cmd = WINDOWS_WEB_BROWSER;
       } else if (match_ptrn(&ptrn, L"제로투 추고 싶다")) {
         cmd = ZEROTWO_CHUGO_SIPDA;
@@ -542,7 +542,7 @@ void unset_hangul_jong(Hangul *hangul) {
 
 void init_ptrn(Ptrn *ptrn) {
   ptrn->idx = 0;
-  memset(ptrn->lens, 0, (9 + 1) * sizeof(unsigned));
+  memset(ptrn->lens, 0, (10 + 1) * sizeof(unsigned));
 }
 
 void add_ptrn(Ptrn *ptrn, const wchar_t letter, const unsigned len) {
@@ -564,6 +564,6 @@ bool match_ptrn(const Ptrn *ptrn, const wchar_t *target) {
 }
 
 bool is_ptrn_full(const Ptrn *ptrn) {
-  return ptrn->idx == 9;
+  return ptrn->idx == 10;
 }
 
