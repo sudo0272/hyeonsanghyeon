@@ -329,7 +329,7 @@ int main(int argc, char **argv) {
             fgoline(src, argument);
 
             if (errno == EINVAL) {
-              fprintf(stderr, "아 상현아 제발");
+              fprintf(stderr, "아 상현이랑 못 놀아주겠다\n");
               run = false;
             }
           }
@@ -380,11 +380,6 @@ int main(int argc, char **argv) {
           field.arr[field.idx] = field.arr[field.idx];
           field.arr[argument] = 0;
 
-          break;
-
-        default:
-          fprintf(stderr, "니가 그러니까 현상현인거야");
-          run = false;
           break;
       }
 
